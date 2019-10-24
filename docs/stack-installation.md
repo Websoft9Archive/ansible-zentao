@@ -18,7 +18,7 @@ If you have completed the ZenTao deployment on Cloud Platform, the following ste
 3. Accept LICENSE and check the environment for ZenTao
    ![](https://libs.websoft9.com/Websoft9/DocsPicture/en/zentao/zentao-installsyscheck-websoft9.png)
 
-4. Then configure the database connection information([Don't know password?](https://support.websoft9.com/docs/lamp/stack-accounts.html#mysql))
+4. Then configure the database connection information([Don't know password?](/stack-accounts.html#mysql))
    ![](https://libs.websoft9.com/Websoft9/DocsPicture/en/zentao/zentao-installdbconf-websoft9.png)
 
 5. Set your administrator account for ZenTao

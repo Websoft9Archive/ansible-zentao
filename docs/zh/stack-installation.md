@@ -18,7 +18,7 @@
 3. 安装进入环境检测页面，点击下一步
    ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/zentao/zentao-install002-websoft9.png)
 
-4. 填写您的数据库参数（[查看数据库账号密码](https://support.websoft9.com/docs/lamp/zh/stack-accounts.html)）
+4. 填写您的数据库参数（[查看数据库账号密码](/zh/stack-accounts.md#mysql)）
    ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/zentao/zentao-install003-websoft9.png)
 
 5. 设置后台账号信息，请务必设置好并牢记之，然后“保存”（建议勾选导入demo数据，以便理解系统）
