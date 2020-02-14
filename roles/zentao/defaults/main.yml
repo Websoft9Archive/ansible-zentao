@@ -1,0 +1,10 @@
+#zentao版本，需定期维护
+zentao_version: "zentaopms_12.0.1_20200212"
+
+#Web服务器：apache | nginx，通过交互式选择获取
+zentao_webs: apache
+
+zentao_vhost_dir: /etc/httpd/vhost
+zentao_vhost_src: vhost.conf
+zentao_service: httpd
+zentao_owner: apache

@@ -1,0 +1,52 @@
+---
+#引入PHP运行环境元数据，并初始化
+- include_vars: roles/role_php-fpm/vars/php_runtime_meta.yml
+
+#Create var for this playbook
+- set_fact:
+    zentao_vhost_dir: php_runtime_meta.{{ansible_distribution}}.{{zentao_webs}}.vhost_dir
+    zentao_vhost_src: php_runtime_meta.{{ansible_distribution}}.{{zentao_webs}}.vhost_src
+    zentao_service: php_runtime_meta.{{ansible_distribution}}.{{zentao_webs}}.service
+    zentao_owner: php_runtime_meta.{{ansible_distribution}}.{{zentao_webs}}.owner
+
+- debug:
+    msg: runtime {{ zentao_vhost_dir }}, {{zentao_vhost_src}}, {{zentao_service}}, {{zentao_owner}}, {{zentao_webs}}, {{ansible_distribution}}
+
+# 9panel
+- name: Enable 9panel I
+  lineinfile:
+    path: /data/apps/9panel/js/websoft9.js
+    regexp: 'var set_apps=\["Example"\];'
+    line: 'var set_apps=["Zentao"];'
+
+# ZenTao
+- name: Remove example dir
+  file:
+    path: /data/wwwroot/www.example.com
+    state: absent
+  
+- name: Creata directory
+  file: 
+    path: /data/wwwroot/zentao
+    state: directory
+
+- name: Download ZenTaoPMS
+  git:
+    repo: https://github.com/easysoft/zentaopms.git
+    dest: /data/wwwroot/zentao
+    version: "{{zentao_version}}"
+
+# 系统通用
+- name: Permission directory
+  shell: find /data/wwwroot -type d -exec chmod 750 {} \;
+  
+- name: Permission file
+  shell: find /data/wwwroot -not -type d -exec chmod 640 {} \;
+
+# 根据不同的基础环境分别处理
+- block:
+  - name: change owner&group for Apache
+    shell: chown -R {{zentao_owner}}:{{zentao_owner}} /data/wwwroot
+
+  - name: Copy Apache or Nginx vhost configuration
+    copy: src={{zentao_vhost_src}} dest={{zentao_vhost_dir}}
