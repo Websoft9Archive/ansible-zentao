@@ -6,13 +6,13 @@ php_version: "7.2"
 
 # 生成应用数据库和用户
 mysql_databases:
- - name: moodle
+ - name: zentao
    encoding: utf8
  
 mysql_users:
- - name: moodle
+ - name: zentao
    host: localhost
-   priv: 'moodle.*:ALL'
+   priv: 'zentao.*:ALL'
 
 # 初始化MySQL root密码
 init_db: 
@@ -22,10 +22,10 @@ init_db:
   
 # 应用数据库信息
 init_application:
-  moodle:
+  zentao:
     service: php-fpm
-    database: moodle 
-    database_user: moodle
+    database: zentao 
+    database_user: zentao
     database_host: localhost
     database_password: "123456"
     
