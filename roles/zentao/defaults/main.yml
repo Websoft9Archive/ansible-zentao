@@ -8,4 +8,4 @@ zentao_owner: apache
 zentao_name: "zentao"
 zentao_title: "Zentao"
 zentao_download_url: "https://github.com/easysoft/zentaopms.git"
-zentao_version: "zzentaopms_12.0.1_20200212"   #版本号需定期维护
+zentao_version: "zentaopms_12.0.stable_20200103"   #版本号需定期维护
