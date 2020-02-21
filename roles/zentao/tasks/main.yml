@@ -12,18 +12,11 @@
 - debug:
     msg: runtime {{ zentao_vhost_dir }}, {{zentao_vhost_src}}, {{zentao_service}}, {{zentao_owner}}, {{zentao_webs}}, {{ansible_distribution}}
 
-# 9panel
-- name: Enable 9panel I
-  lineinfile:
-    path: /data/apps/9panel/js/websoft9.js
-    regexp: 'var set_apps=\["Example"\];'
-    line: 'var set_apps=["Zentao"];'
-
 # ZenTao
-- name: Remove example dir
-  file:
-    path: /data/wwwroot/www.example.com
-    state: absent
+- name: Remove extra dir
+  shell: |
+    rm -rf /data/wwwroot/www.example.com
+    rm -rf /data/wwwroot/{{zentao_name}}
   
 - name: Creata directory
   file: 
@@ -32,7 +25,7 @@
 
 - name: Download ZenTaoPMS
   git:
-    repo: https://github.com/easysoft/zentaopms.git
+    repo: "{{zentao_download_url}}"
     dest: /data/wwwroot/zentao
     version: "{{zentao_version}}"
 
