@@ -29,6 +29,9 @@
     dest: /data/wwwroot/zentao
     version: "{{zentao_version}}"
 
+- name: Rename dir name
+  shell: if [ ! -d "/data/wwwroot/{{zentao_name}}" ]; then mv *{{zentao_name}}* {{zentao_name}}; fi
+
 # 系统通用
 - name: Permission directory
   shell: find /data/wwwroot -type d -exec chmod 750 {} \;
