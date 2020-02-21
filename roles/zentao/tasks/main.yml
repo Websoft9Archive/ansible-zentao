@@ -4,10 +4,10 @@
 
 #Create var for this playbook
 - set_fact:
-    zentao_vhost_dir: php_runtime_meta.[ansible_distribution].[zentao_webs].vhost_dir
-    zentao_vhost_src: php_runtime_meta.[ansible_distribution].[zentao_webs].vhost_src
-    zentao_service: php_runtime_meta.[ansible_distribution].[zentao_webs].service
-    zentao_owner: php_runtime_meta.[ansible_distribution].[zentao_webs].owner
+    zentao_vhost_dir: php_runtime_meta[ansible_distribution][zentao_webs].vhost_dir
+    zentao_vhost_src: php_runtime_meta[ansible_distribution][zentao_webs].vhost_src
+    zentao_service: php_runtime_meta[ansible_distribution][zentao_webs].service
+    zentao_owner: php_runtime_meta[ansible_distribution][zentao_webs].owner
 
 - debug:
     msg: runtime {{ zentao_vhost_dir }}, {{zentao_vhost_src}}, {{zentao_service}}, {{zentao_owner}}, {{zentao_webs}}, {{ansible_distribution}}
