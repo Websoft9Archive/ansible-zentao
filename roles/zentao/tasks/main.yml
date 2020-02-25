@@ -32,6 +32,14 @@
 - name: Rename dir name
   shell: cd /data/wwwroot; if [ ! -d "{{zentao_name}}" ]; then mv *{{zentao_name}}* {{zentao_name}}; fi
 
+- name: Delete .htaccess .ztaccess
+  file: 
+    path: "{{item}}"
+    state: absent
+  with_items:
+    - /data/wwwroot/zentao/www/.htaccess
+    - /data/wwwroot/zentao/www/.ztaccess
+
 # 系统通用
 - name: Permission directory
   shell: find /data/wwwroot -type d -exec chmod 750 {} \;
