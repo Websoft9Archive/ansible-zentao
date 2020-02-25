@@ -24,10 +24,10 @@
     state: directory
 
 - name: Download ZenTaoPMS
-  git:
-    repo: "{{zentao_download_url}}"
+  unarchive:
+    src: "{{zentao_download_url}}"
     dest: /data/wwwroot/zentao
-    version: "{{zentao_version}}"
+    remote_src: yes
 
 - name: Rename dir name
   shell: cd /data/wwwroot; if [ ! -d "{{zentao_name}}" ]; then mv *{{zentao_name}}* {{zentao_name}}; fi
