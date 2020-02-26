@@ -15,16 +15,11 @@
 # ZenTao
 - name: Remove extra dir
   shell: rm -rf /data/wwwroot/{{zentao_name}}
-  
-- name: Creata directory
-  file: 
-    path: /data/wwwroot/zentao
-    state: directory
 
 - name: Download ZenTaoPMS
   unarchive:
     src: "{{zentao_download_url}}"
-    dest: /data/wwwroot/zentao
+    dest: /data/wwwroot
     remote_src: yes
 
 - name: Rename dir name
