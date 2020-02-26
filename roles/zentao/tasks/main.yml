@@ -14,9 +14,7 @@
 
 # ZenTao
 - name: Remove extra dir
-  shell: |
-    rm -rf /data/wwwroot/www.example.com
-    rm -rf /data/wwwroot/{{zentao_name}}
+  shell: rm -rf /data/wwwroot/{{zentao_name}}
   
 - name: Creata directory
   file: 
@@ -41,11 +39,10 @@
     - /data/wwwroot/zentao/www/.ztaccess
 
 # 系统通用
-- name: Permission directory
-  shell: find /data/wwwroot -type d -exec chmod 750 {} \;
-  
-- name: Permission file
-  shell: find /data/wwwroot -not -type d -exec chmod 640 {} \;
+- name: Permission directory & file 
+  shell: |
+    find /data/wwwroot -type d -exec chmod 750 {} \;
+    find /data/wwwroot -not -type d -exec chmod 640 {} \;
 
 # 根据不同的基础环境分别处理
 - block:
@@ -53,7 +50,7 @@
     shell: chown -R {{zentao_owner}}:{{zentao_owner}} /data/wwwroot
 
   - name: Copy Apache or Nginx vhost configuration
-    copy: src={{zentao_vhost_src}} dest={{zentao_vhost_dir}}
+    template: src={{zentao_vhost_src}} dest={{zentao_vhost_dir}}
     
   - name: restart Apache or Nginx
     service: name={{zentao_service}} state=restarted enabled=yes
