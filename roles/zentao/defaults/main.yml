@@ -4,6 +4,7 @@ zentao_webs: apache
 zentao_vhost_dir: /etc/httpd/vhost
 zentao_vhost_src: vhost.conf
 zentao_service: httpd
+zentao_db_password: "123456"
 zentao_owner: apache
 zentao_name: "zentao"
 zentao_title: "Zentao"

@@ -8,6 +8,7 @@
     zentao_vhost_src: "{{php_runtime_meta[ansible_os_family][zentao_webs].vhost_src}}"
     zentao_service: "{{php_runtime_meta[ansible_os_family][zentao_webs].service}}"
     zentao_owner: "{{php_runtime_meta[ansible_os_family][zentao_webs].owner}}"
+    zentao_db_password: "{{mysql_root_password}}"
 
 - debug:
     msg: runtime {{ zentao_vhost_dir }}, {{zentao_vhost_src}}, {{zentao_service}}, {{zentao_owner}}, {{zentao_webs}}, {{ansible_distribution}}
@@ -49,3 +50,6 @@
     
   - name: restart Apache or Nginx
     service: name={{zentao_service}} state=restarted enabled=yes
+
+  - name: restart php-fpm
+    service: name=php-fpm state=restarted
