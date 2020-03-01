@@ -9,4 +9,6 @@ zentao_owner: apache
 zentao_name: "zentao"
 zentao_title: "Zentao"
 #下载链接需定期维护
-zentao_download_url: "http://dl.cnezsoft.com/zentao/12.0.1/ZenTaoALM.12.0.1.int.zip"   
+zentao_download_url: 
+    "zh": "http://dl.cnezsoft.com/zentao/12.0.1/ZenTaoPMS.12.0.1.zip"   
+    "int": "http://dl.cnezsoft.com/zentao/12.0.1/ZenTaoALM.12.0.1.int.zip"
