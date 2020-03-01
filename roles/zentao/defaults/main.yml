@@ -8,8 +8,11 @@ zentao_db_password: "123456"
 zentao_owner: apache
 zentao_name: "zentao"
 zentao_title: "Zentao"
+
+#发行版：zh | int
+zentao_distribution: "zh"
 #下载链接需定期维护
-zentao_download_url: 
+zentao_download_url_meta: 
   "zh": 
     "url": "http://dl.cnezsoft.com/zentao/12.0.1/ZenTaoPMS.12.0.1.zip"  
     
