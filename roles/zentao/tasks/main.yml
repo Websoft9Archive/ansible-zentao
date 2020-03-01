@@ -17,9 +17,9 @@
 - name: Remove extra dir
   shell: rm -rf /data/wwwroot/{{zentao_name}}
 
-- name: Download ZenTaoPMS
+- name: Download ZenTaoPMS from {{zentao_download_url_meta[zentao_distribution].url}}
   unarchive:
-    src: "{{zentao_download_url}}"
+    src: "{{zentao_download_url_meta[zentao_distribution].url}}"
     dest: /data/wwwroot
     remote_src: yes
 
