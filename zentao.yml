@@ -12,6 +12,12 @@
       2: Nginx\n"
       private: no
       default: 1
+    - name: 'distribution_selection'
+      prompt: "\nWhich distribution of Zentao do you want to use? [ 1/2 ] \n\n
+      1: Zh\n
+      2: International \n"
+      private: no
+      default: 1
 
   vars:
     webs_select:
@@ -21,10 +27,15 @@
     infrastructure_select:
       '1': 'LAMP'
       '2': 'LNMP'
+    
+    distribution_select:
+      '1': 'zh'
+      '2': 'int'
 
     zentao_webs: "{{webs_select[webs_selection]}}" 
     phpmyadmin_webs: "{{webs_select[webs_selection]}}" 
     w9panel_webs: "{{webs_select[webs_selection]}}" 
+    zentao_distribution: "{{distribution_select[distribution_selection]}}" 
 
     w9panel_set_infrastructure: "{{infrastructure_select[webs_selection]}}" 
     w9panel_set_apps: 
