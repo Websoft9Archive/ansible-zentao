@@ -24,10 +24,9 @@
 
 ## 本项目安装的是 zentao 最新版吗？
 
-本项目通过下载[Zentao源码](https://www.zentao.net/download.html)进行安装，其中下载链接存储在：[role/zentao/default/main.yml](/roles/zentao/defaults/main.yml)
+本项目通过下载 Zentao 源码进行安装，下载链接存储在：[role/zentao/default/main.yml](/roles/zentao/defaults/main.yml)。我们会定期检查并测试官方版本的可用性，尽可能保证用户可以顺利安装最新版。
 
 ```
-#下载链接需定期维护
 zentao_download_url_meta: 
   "zh": 
     "url": "http://dl.cnezsoft.com/zentao/12.0.1/ZenTaoPMS.12.0.1.zip"  
@@ -36,9 +35,7 @@ zentao_download_url_meta:
     "url": "http://dl.cnezsoft.com/zentao/12.0.1/ZenTaoALM.12.0.1.int.zip"
 ```
 
-如果你想修改版本号，请先查看 [zentao 下载中心](https://www.zentao.net/download.html) 对应版本的下载页面，再修改上面的 `url` 变量值即可安装指定版本。
-
-我们会定期检查版本，并测试官方版本的可用性，以保证用户可以顺利安装最新版。
+如果你发现不是最新版，请查看 [zentao 下载中心](https://www.zentao.net/download.html) 对应版本的下载页面，再修改 [main.yml](/roles/zentao/defaults/main.yml) 中的 `url` 变量值即可安装最新版的 Zentao。
 
 ## 安装指南
 
