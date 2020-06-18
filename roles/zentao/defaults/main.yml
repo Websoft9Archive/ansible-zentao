@@ -14,7 +14,7 @@ zentao_distribution: "zh"
 #下载链接需定期维护
 zentao_download_url_meta: 
   "zh": 
-    "url": "http://dl.cnezsoft.com/zentao/12.0.1/ZenTaoPMS.12.0.1.zip"  
+    "url": "http://dl.cnezsoft.com/zentao/12.3.2/ZenTaoPMS.12.3.2.zip"  
     
   "int": 
-    "url": "http://dl.cnezsoft.com/zentao/12.0.1/ZenTaoALM.12.0.1.int.zip"
+    "url": "http://dl.cnezsoft.com/zentao/12.3.2/ZenTaoALM.12.3.2.int.zip"
