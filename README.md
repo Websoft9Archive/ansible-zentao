@@ -28,11 +28,11 @@
 
 ```
 zentao_download_url_meta: 
-  "zh": 
-    "url": "http://dl.cnezsoft.com/zentao/12.0.1/ZenTaoPMS.12.0.1.zip"  
+   "zh": 
+    "url": "http://dl.cnezsoft.com/zentao/12.3.2/ZenTaoPMS.12.3.2.zip"  
     
   "int": 
-    "url": "http://dl.cnezsoft.com/zentao/12.0.1/ZenTaoALM.12.0.1.int.zip"
+    "url": "http://dl.cnezsoft.com/zentao/12.3.2/ZenTaoALM.12.3.2.int.zip"
 ```
 
 如果你发现不是最新版，请查看 [zentao 下载中心](https://www.zentao.net/download.html) 对应版本的下载页面，再修改 [main.yml](/roles/zentao/defaults/main.yml) 中的 `url` 变量值即可安装最新版的 Zentao。
