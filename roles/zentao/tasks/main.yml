@@ -53,3 +53,8 @@
 
   - name: restart php-fpm
     service: name=php-fpm state=restarted
+
+# Check zootao version
+- name: Check joomla version
+  shell: >
+    sudo echo "zootao version:" $(cat /data/wwwroot/zentao/VERSION) |tee -a /data/logs/install_version.txt
