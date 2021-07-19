@@ -34,12 +34,14 @@
     - /data/wwwroot/zentao/www/.htaccess
     - /data/wwwroot/zentao/www/.ztaccess
 
+- name: Modify the Zen code permissions(default is 777)
+  shell: sed -i "s/0777/0750/g" /data/wwwroot/zentao/module/user/control.php 
+
 # 系统通用
 - name: Permission directory & file 
   shell: |
     find /data/wwwroot -type d -exec chmod 750 {} \;
     find /data/wwwroot -not -type d -exec chmod 640 {} \;
-    # find /data/wwwroot/zentao/www/data -type d -exec chmod 750 {} \;
     
 # 根据不同的基础环境分别处理
 - block:
